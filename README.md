@@ -11,7 +11,6 @@ Build a well-designed application that is simple and fun. Foster our culture by 
  - Laravel
  - VueJS
  - Bootstrap4
- 
  - Azure/Docker Deployment?
  - Google Analytics
  - Google Maps?
