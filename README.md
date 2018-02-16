@@ -22,6 +22,7 @@ Build a well-designed application that is simple and fun. Foster our culture by 
  - Configure valet to host your `pets` repo
  - `cd` into project directory
  - Run `cp .env.example .env`
+ - Run `composer install && npm install`
  - Create a new database in local MySQL/MariaDB and configure credentials in the new `.env` file
  - Run `php artisan migrate` to run initial database migrations
  - Visit `https://pets.test/` to confirm everything's ready to rock.
