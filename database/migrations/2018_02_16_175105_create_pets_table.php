@@ -17,8 +17,8 @@ class CreatePetsTable extends Migration
             $table->increments('id');
             $table->text('name');
             $table->text('avatar')->nullable();
-            $table->text('favorite_place');
-            $table->date('date_of_birth');
+            $table->text('favorite_place')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->timestamps();
         });
     }
