@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('api')->group(function () {
+
+    Route::get('pet', 'PetController@index');
+    Route::get('pet/{pet}', 'PetController@show');
+
+});
+
