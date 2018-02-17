@@ -15,6 +15,7 @@ class CreatePetsTable extends Migration
     {
         Schema::create('pets', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->text('name');
             $table->text('avatar')->nullable();
             $table->text('favorite_place')->nullable();
