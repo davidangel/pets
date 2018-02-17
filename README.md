@@ -24,4 +24,6 @@ Build a well-designed application that is simple and fun. Foster our culture by 
  - Run `composer install && npm install`
  - Create a new database in local MySQL/MariaDB and configure credentials in the new `.env` file
  - Run `php artisan migrate` to run initial database migrations
+ - Run `php artisan storage:link` to link the storage directory
+ - Optionally run `php artisan db:seed` to create sample data in the database
  - Visit `https://pets.test/` to confirm everything's ready to rock.
