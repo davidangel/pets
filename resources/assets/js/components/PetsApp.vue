@@ -1,15 +1,7 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="card card-default">
-                    <div class="card-header">Pets App</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
+            <pet-card class="col-sm-3" v-for="pet in pets" :pet="pet" :key="pet.id">{{ pet.name }}></pet-card>         
         </div>
     </div>
 </template>
@@ -18,14 +10,14 @@
     export default {
         data() {
             return {
-                "pets": []
+                name: 'Pets',
+                pets: []
             }
         },
         mounted() {
             console.log('Component mounted.')
             axios.get('/api/pet')
-                .then(function (response) {
-                    console.log(response)
+                .then(response => {
                     this.pets = response.data
                 })
                 .catch(function (error) {

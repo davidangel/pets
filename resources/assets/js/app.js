@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('pets-app', require('./components/PetsApp.vue'));
+Vue.component('pet-card', require('./components/PetCard.vue'));
+
 
 const app = new Vue({
     el: '#app'
