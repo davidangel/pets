@@ -9,6 +9,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $appends = ['avatar_url'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -31,4 +33,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Pet::class);
     }
+
+    public function getAvatarUrlAttribute() {
+        return asset('storage/uploads/avatars/') . '/' . $this->avatar;
+    }
+
 }
