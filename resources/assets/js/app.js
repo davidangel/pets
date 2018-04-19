@@ -15,6 +15,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('search-box', require('./components/SearchBox.vue'));
 Vue.component('pets-app', require('./components/PetsApp.vue'));
 Vue.component('pet-card', require('./components/PetCard.vue'));
 

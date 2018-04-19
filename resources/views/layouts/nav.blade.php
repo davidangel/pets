@@ -20,10 +20,7 @@
                     <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @else
-                    <form class="form-inline mt-2 mt-md-0">
-                        <input class="form-control form-control-sm mr-sm-2" placeholder="Search" aria-label="Search" type="text">
-                        <button class="btn btn-sm btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                    <search-box></search-box>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
