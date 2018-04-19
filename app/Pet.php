@@ -15,7 +15,7 @@ class Pet extends Model
     
     public function human()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function addBreed($tag='')
