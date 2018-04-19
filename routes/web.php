@@ -23,6 +23,7 @@ Route::prefix('api')->group(function () {
 
     Route::get('pet', 'PetController@index');
     Route::get('pet/{pet}', 'PetController@show');
+    Route::get('pet/search/{q}', 'PetSearchController@index');
 
 });
 
