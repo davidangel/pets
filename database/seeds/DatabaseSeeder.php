@@ -18,25 +18,26 @@ class DatabaseSeeder extends Seeder
             if (File::isDirectory($path)) { File::deleteDirectory($path); }
             File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
 
-            DB::table('users')->delete();
             DB::table('pets')->delete();
+            DB::table('users')->delete();
             DB::table('tags')->delete();
             DB::table('taggables')->delete();
 
             $this->createDevUser();
 
             // create users
-            factory(App\User::class, 9)->create()->each(function ($user) {
+            factory(App\User::class, 25)->create()->each(function ($user) {
 
                 // (maybe) create pets
                 $pets = [];
-                factory(App\Pet::class, rand(0, 3))->create(['user_id' => $user->id])->each(function ($pet) {
+                factory(App\Pet::class, rand(0, 3))->create()->each(function ($pet) use ($user) {
+                    $user->pets()->save($pet);
                     $pets[] = $pet;
                 });
 
-                if(!empty($pets)) {
-                    $user->pets()->save($pets);
-                }
+                // if(!empty($pets)) {
+                //     $user->pets()->save($pets);
+                // }
 
             });
 
