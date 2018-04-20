@@ -1,9 +1,9 @@
 <template>
   <div class="row justify-content-center">
-    <div v-for="pet in pets" :key="pet.id" :title="pet.name" class="col-lg-3 text-center p-5 grow">
+    <div v-for="pet in pets" :key="pet.id" :title="pet.name" class="col-lg-3 text-center p-4 pb-5 grow">
       <img :src="pet.avatar_url" :alt="pet.name" class="rounded-circle img-fluid">
       <h2>{{ pet.name }}</h2>
-      <p>belongs with { human name }</p>
+      <small class="text-muted">belongs with<br>{{ pet.human.name }}</small>
     </div>
   </div>
 </template>

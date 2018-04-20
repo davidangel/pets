@@ -12,7 +12,8 @@ class Pet extends Model
     use HasTags;
 
     protected $appends = ['avatar_url'];
-    
+    protected $with = ['human'];
+
     public function human()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -31,7 +32,7 @@ class Pet extends Model
         $this->detachTag($tagWithType);
         return $this;
     }
-    
+
     public function getAvatarUrlAttribute() {
         return asset('storage/uploads/avatars/') . '/' . $this->avatar;
     }
