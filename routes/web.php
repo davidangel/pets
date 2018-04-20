@@ -11,19 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::prefix('api')->group(function () {
-
-    Route::get('pet', 'PetController@index');
-    Route::get('pet/{pet}', 'PetController@show');
-    Route::get('pet/search/{q}', 'PetSearchController@index');
-
-});
-
+Route::get('{path}', function () {
+    return view('index');
+})->where('path', '(.*)');

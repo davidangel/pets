@@ -35,10 +35,6 @@ class DatabaseSeeder extends Seeder
                     $pets[] = $pet;
                 });
 
-                // if(!empty($pets)) {
-                //     $user->pets()->save($pets);
-                // }
-
             });
 
             $this->command->info('Successfully seeded database with sample users and pets. (login with dev@dev.com/secret)');

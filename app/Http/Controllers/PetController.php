@@ -9,7 +9,7 @@ class PetController extends Controller
 {
     public function index()
     {
-        return Pet::all();
+        return Pet::inRandomOrder()->take(12)->get();
     }
 
     public function show(Pet $pet)
