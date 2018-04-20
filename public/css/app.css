@@ -12278,6 +12278,14 @@ body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
   opacity: 0;
 }
 
+.site-header {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.site-header a {
+  color: gray;
+}
+
 .grow {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;

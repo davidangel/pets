@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <nav class="site-header navbar navbar-expand-lg sticky-top">
     <div class="container">
       <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
         {{ appName }}
@@ -16,6 +16,10 @@
             <a class="nav-link" href="#">Link</a>
           </li> -->
         </ul>
+
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text">
+        </form>
 
         <ul class="navbar-nav ml-auto">
           <!-- Authenticated -->

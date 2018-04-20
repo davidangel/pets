@@ -3,7 +3,8 @@
     <div v-for="pet in pets" :key="pet.id" :title="pet.name" class="col-lg-3 text-center p-4 pb-5 grow">
       <img :src="pet.avatar_url" :alt="pet.name" class="rounded-circle img-fluid">
       <h2>{{ pet.name }}</h2>
-      <small class="text-muted">belongs with<br>{{ pet.human.name }}</small>
+      <small class="text-muted">belongs with</small>
+      <p>{{ pet.human.name }}</p>
     </div>
   </div>
 </template>
