@@ -7,7 +7,8 @@ use App\Pet;
 
 class PetSearchController extends Controller
 {
-    public function index($q) {
-        return Pet::like('name', $q)->get();
+    public function index($q)
+    {
+        return Pet::searchByNameOrHumanName($q)->get();
     }
 }

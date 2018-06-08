@@ -91,7 +91,8 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Pet::class);
     }
 
-    public function getAvatarUrlAttribute() {
+    public function getAvatarUrlAttribute()
+    {
         return asset('storage/uploads/avatars/') . '/' . $this->avatar;
     }
 }

@@ -19,6 +19,14 @@ class Pet extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+    public function scopeSearchByNameOrHumanName($query, $search)
+    {
+        return $this->join('users', 'pets.user_id', '=', 'users.id')
+                     ->select('pets.*')
+                     ->where('users.name', 'LIKE', '%'.$search.'%')
+                     ->orWhere('pets.name', 'LIKE', '%'.$search.'%');
+    }
+
     public function addBreed($tag='')
     {
         $tagWithType = Tag::findOrCreate([$tag], 'breedTag');
@@ -33,12 +41,8 @@ class Pet extends Model
         return $this;
     }
 
-    public function getAvatarUrlAttribute() {
+    public function getAvatarUrlAttribute()
+    {
         return asset('storage/uploads/avatars/') . '/' . $this->avatar;
     }
-
-    public function scopeLike($query, $field, $value){
-        return $query->where($field, 'LIKE', "%$value%");
-    }
-
 }
