@@ -23,9 +23,9 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
 
+    Route::get('pet/search/{query?}', 'PetSearchController@index');
     Route::get('pet', 'PetController@index');
     Route::get('pet/{pet}', 'PetController@show');
-    Route::get('pet/search/{q}', 'PetSearchController@index');
 });
 
 Route::group(['middleware' => 'guest:api'], function () {

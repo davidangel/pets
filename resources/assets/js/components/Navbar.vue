@@ -18,7 +18,7 @@
         </ul>
 
         <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text">
+          <input v-model="searchQuery" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text" @keyup="doSearch()">
         </form>
 
         <ul class="navbar-nav ml-auto">
@@ -71,7 +71,8 @@ export default {
   },
 
   data: () => ({
-    appName: window.config.appName
+    appName: window.config.appName,
+    searchQuery: ''
   }),
 
   computed: mapGetters({
@@ -85,6 +86,9 @@ export default {
 
       // Redirect to login.
       this.$router.push({ name: 'login' })
+    },
+    doSearch () {
+      this.$store.dispatch('search/execute', { query: this.searchQuery })
     }
   }
 }

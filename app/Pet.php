@@ -19,12 +19,12 @@ class Pet extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function scopeSearchByNameOrHumanName($query, $search)
+    public function scopeSearchByNameOrHumanName($query = 'test', $search)
     {
         return $this->join('users', 'pets.user_id', '=', 'users.id')
                      ->select('pets.*')
                      ->where('users.name', 'LIKE', '%'.$search.'%')
-                     ->orWhere('pets.name', 'LIKE', '%'.$search.'%');
+                     ->orWhere('pets.name', 'LIKE', '%'.$search.'%')->limit(12);
     }
 
     public function addBreed($tag='')

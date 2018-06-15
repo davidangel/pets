@@ -10,28 +10,18 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import axios from 'axios'
 export default {
   middleware: 'auth',
 
-  data () {
-    return {
-      pets: []
-    }
-  },
+  computed: mapGetters({
+    user: 'search/query',
+    pets: 'search/results'
+  }),
 
   metaInfo () {
     return { title: this.$t('home') }
-  },
-
-  mounted () {
-    axios.get('/api/pet')
-      .then(response => {
-        this.pets = response.data
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
   }
 }
 </script>
