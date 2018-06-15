@@ -11,7 +11,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import axios from 'axios'
 export default {
   middleware: 'auth',
 
@@ -19,6 +18,10 @@ export default {
     user: 'search/query',
     pets: 'search/results'
   }),
+
+  mounted: function () {
+    this.$store.dispatch('search/execute', { query: '' })
+  },
 
   metaInfo () {
     return { title: this.$t('home') }
